@@ -1,0 +1,28 @@
+{
+  "name": "classnames",
+  "version": "1.0.0",
+  "description": "A utility for joining classNames together",
+  "license": "MIT",
+  "author": "Anthony Nichols <hi@anthonynichols.me>",
+  "repository": "github:anthonynichols/classnames",
+  "homepage": "https://github.com/anthonynichols/classnames",
+  "bugs": {
+    "url": "https://github.com/anthonynichols/classnames/issues"
+  },
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "types": "cjs/index.d.ts",
+  "scripts": {
+    "build": "yarn build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "yarn watch:esm",
+    "watch:cjs": "tsc -w -p tsconfig.cjs.json",
+    "watch:esm": "tsc -w -p tsconfig.esm.json"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "typescript": "^3.8.0-beta"
+  }
+}

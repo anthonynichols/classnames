@@ -1,0 +1,6 @@
+/.*/
+/.*
+/src/
+/tests/
+tsconfig*
+yarn.lock
