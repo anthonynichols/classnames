@@ -14,7 +14,7 @@
   },
   "main": "cjs/index.js",
   "module": "esm/index.js",
-  "types": "cjs/index.d.ts",
+  "types": "esm/index.d.ts",
   "scripts": {
     "build": "yarn build:esm",
     "build:cjs": "tsc -p tsconfig.cjs.json",
@@ -25,7 +25,7 @@
     "watch:esm": "tsc -w -p tsconfig.esm.json"
   },
   "devDependencies": {
-    "jest": "^24.9.0",
-    "typescript": "^3.8.0-beta"
+    "jest": "^26.0.1",
+    "typescript": "^3.9.2"
   }
 }
