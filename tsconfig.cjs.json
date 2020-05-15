@@ -14,9 +14,9 @@
     "sourceMap": true
   },
 
+  "compileOnSave": false,
+
   "files": [
     "src/index.ts",
   ],
-
-  "compileOnSave": false,
 }
