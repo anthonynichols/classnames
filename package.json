@@ -1,13 +1,16 @@
 {
-  "name": "classnames",
+  "name": "@anthonynichols/classnames",
   "version": "1.0.0",
   "description": "A utility for joining classNames together",
   "license": "MIT",
   "author": "Anthony Nichols <hi@anthonynichols.me>",
-  "repository": "github:anthonynichols/classnames",
   "homepage": "https://github.com/anthonynichols/classnames",
   "bugs": {
     "url": "https://github.com/anthonynichols/classnames/issues"
+  },
+  "repository": "git://github.com/anthonynichols/classnames.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "main": "cjs/index.js",
   "module": "esm/index.js",
