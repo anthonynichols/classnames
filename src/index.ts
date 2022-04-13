@@ -36,7 +36,7 @@ export function classNames(...args: ClassNames[]) {
       classes.push(arg);
     }
     else if (isArray(arg)) {
-      classes.push(classNames(arg));
+      classes.push(classNames(...arg));
     }
     else if (isObject(arg)) {
       for (let key in arg) {
