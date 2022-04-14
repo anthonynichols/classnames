@@ -1,12 +1,10 @@
 type ClassNameValue = string | number | boolean | undefined | null;
 
-type ClassNamesDictionary = {
-  [className: string]: boolean | undefined | null;
-};
+type ClassNamesMapping = Record<string, unknown>;
 
-type ClassNamesArray = (ClassNameValue | ClassNamesDictionary)[];
+interface ClassNamesArray extends Array<ClassNames> {}
 
-type ClassNames = ClassNameValue | ClassNamesDictionary | ClassNamesArray;
+type ClassNames = ClassNameValue | ClassNamesMapping | ClassNamesArray;
 
 function isString(arg: ClassNames): arg is string {
   return typeof arg === 'string';
@@ -17,10 +15,10 @@ function isNumber(arg: ClassNames): arg is number {
 }
 
 function isArray(arg: ClassNames): arg is ClassNamesArray {
-  return Array.isArray(arg) && Boolean(arg.length);
+  return Array.isArray(arg);
 }
 
-function isObject(arg: ClassNames): arg is ClassNamesDictionary {
+function isObject(arg: ClassNames): arg is ClassNamesMapping {
   return typeof arg === 'object';
 }
 
@@ -36,11 +34,17 @@ export function classNames(...args: ClassNames[]) {
       classes.push(arg);
     }
     else if (isArray(arg)) {
-      classes.push(classNames(...arg));
+      let nestedClasses = classNames(...arg);
+      if (nestedClasses) classes.push(nestedClasses);
     }
     else if (isObject(arg)) {
-      for (let key in arg) {
-        if (arg[key]) classes.push(key);
+      if (arg.toString === Object.prototype.toString) {
+        for (let key in arg) {
+          if (arg[key]) classes.push(key);
+        }
+      }
+      else {
+        classes.push(arg.toString());
       }
     }
   }

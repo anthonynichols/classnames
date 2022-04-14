@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "CommonJS",
+    "declaration": true,
+    "declarationMap": true,
+    "skipLibCheck": true,
+    "pretty": true,
+    "removeComments": true,
+    "strict": false,
+    "noImplicitUseStrict": true,
+    "esModuleInterop": true,
+    "sourceMap": true
+  },
+}
